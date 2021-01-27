@@ -126,4 +126,7 @@ body > .el-container {
 .el-container:nth-child(7) .el-aside {
 	line-height: 320px;
 }
+.router-link-exact-active{
+	color:#ff0000;
+}
 </style>
