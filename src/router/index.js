@@ -8,7 +8,30 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    redirect: "yanzheng",
+    children: [
+      {
+        path: 'yanzheng',
+        name: 'yanzheng',
+        component: () => import('../components/yanzheng.vue')
+      },
+      {
+        path: 'chaxun',
+        name: 'chaxun',
+        component: () => import('../components/chaxun.vue')
+      },
+      {
+        path: 'shengcheng',
+        name: 'shengcheng',
+        component: () => import('../components/shengcheng.vue')
+      },
+      {
+        path: 'xinxi',
+        name: 'xinxi',
+        component: () => import('../components/xinxi.vue')
+      }
+    ]
   },
   {
     path: '/about',

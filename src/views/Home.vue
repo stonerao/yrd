@@ -2,7 +2,7 @@
 
 <template>
 	<el-container class="full">
-		<el-header>Header</el-header>
+		<el-header>区块链</el-header>
 		<el-main>
 			<!-- left -->
 			<div class="left">
@@ -12,26 +12,16 @@
 							<i class="el-icon-location"></i>
 							<span>{{ item.name }}</span>
 						</template>
-						<!-- <el-menu-item-group>
-							<template slot="title">分组一</template>
-							<el-menu-item index="1-1">选项1</el-menu-item>
-							<el-menu-item index="1-2">选项2</el-menu-item>
-						</el-menu-item-group>
-						<el-menu-item-group title="分组2">
-							<el-menu-item index="1-3">选项3</el-menu-item>
-						</el-menu-item-group>
-						<el-submenu index="1-4">
-							<template slot="title">选项4</template>
-							<el-menu-item index="1-4-1">选项1</el-menu-item>
-						</el-submenu> -->
 					</el-submenu>
 				</el-menu>
 			</div>
 			<!-- main -->
 			<div class="right">
 				<div class="r-head">
-					<div v-for="item in rnavs" :key="item.id">{{ item.name }}</div>
-				</div>  
+					<div v-for="item in rnavs" :key="item.id">
+						<router-link :to="{ name: item.path }" tag="li"> {{ item.name }}</router-link>
+					</div>
+				</div>
 				<router-view />
 			</div>
 		</el-main>
@@ -45,21 +35,21 @@ export default {
 	data() {
 		return {
 			navs: [
-				{ name: "在线验证", id: 1 },
-				{ name: "验证报告简介", id: 2 },
-				{ name: "防伪措施", id: 3 },
-				{ name: "验证真伪", id: 4 },
-				{ name: "特点和用途", id: 5 },
-				{ name: "如何申请", id: 6 },
-				{ name: "如何使用", id: 7 },
-				{ name: "延长验证有效期", id: 8 },
-				{ name: "特别声明", id: 9 },
+				{ name: "在线验证", id: "1" },
+				{ name: "验证报告简介", id: "2" },
+				{ name: "防伪措施", id: "3" },
+				{ name: "验证真伪", id: "4" },
+				{ name: "特点和用途", id: "5" },
+				{ name: "如何申请", id: "6" },
+				{ name: "如何使用", id: "7" },
+				{ name: "延长验证有效期", id: "8" },
+				{ name: "特别声明", id: "9" },
 			],
 			rnavs: [
-				{ name: "学籍查询", id: 1 },
-				{ name: "在线验证", id: 2 },
-				{ name: "生成验证信息", id: 3 },
-				{ name: "个人信息修改", id: 4 },
+				{ name: "学籍查询", id: 1, path: "yanzheng" },
+				{ name: "在线验证", id: 2, path: "chaxun" },
+				{ name: "生成验证信息", id: 3, path: "shengcheng" },
+				{ name: "个人信息修改", id: 4, path: "xinxi" },
 			],
 		};
 	},
